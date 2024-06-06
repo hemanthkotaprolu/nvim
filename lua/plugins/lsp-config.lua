@@ -1,17 +1,17 @@
 return {
   {
-   "williamboman/mason.nvim",
+    "williamboman/mason.nvim",
+    lazy = false,
     config = function()
       require("mason").setup()
-    end
+    end,
   },
   {
     "williamboman/mason-lspconfig.nvim",
-    config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = {"clangd", "pyright", "lua_ls"}
-      })
-    end
+    lazy = false,
+    opts = {
+      auto_install = true,
+    },
   },
   {
     "neovim/nvim-lspconfig",
